@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="princip.css">
+    <link rel="stylesheet" href="experiment.css">
+    <script src="./JASON.js"  crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".card button");
+    
+    buttons.forEach((button, index) => {
+        button.addEventListener("click", function() {
+            let existingInfo = this.parentElement.querySelector(".experiment-info");
+            
+            if (existingInfo) {
+                existingInfo.remove(); // Remove info if already displayed
+                return;
+            }
+            
+            const info = document.createElement("p");
+            info.classList.add("experiment-info");
+            
+            const experimentDetails = [
+                "Experiment #1: This experiment demonstrates the principles of chemical reactions.",
+                "Experiment #2: This experiment explores the effects of temperature on reaction speed.",
+                "Experiment #3: This experiment showcases the properties of different materials."
+            ];
+            
+            info.textContent = experimentDetails[index];
+            
+            const linkButton = document.createElement("a");
+            linkButton.textContent = "Learn More";
+            linkButton.href = [
+                "https://www.youtube.com/watch?v=du4QT5-iicI&ab_channel=KidsFunScience%28KidsFunScience%29",
+                "https://www.youtube.com/watch?v=fW4aMOSVv_8&ab_channel=CambridgeUniversityAstronomy",
+                "https://www.youtube.com/watch?v=P_R7J9CWfKw&t=3s&ab_channel=ChemistryExplained"
+            ][index];
+            linkButton.target = "_blank";
+            linkButton.classList.add("learn-more-button");
+            
+            const container = document.createElement("div");
+            container.appendChild(info);
+            container.appendChild(linkButton);
+            
+            this.parentElement.appendChild(container);
+        });
+    });
+});
+
+    </script>
+</head>
+<body>
+    <nav>
+        <ul id="nav">
+            <li id="onpage"><a href="./index.html">Home</a></li>
+            <li><a href="./Experiment.html">Experiment</a></li>
+            <li>Ecolo</li>
+        </ul>
+    </nav>
+
+    <div id="cards">
+        <div class="card">
+            <img src="./OIP (1).jpg" alt="" class="co">
+            <div class="abc">
+                <h4>Experiment #1</h4>
+                <button>Check this out</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./OIP.jpg" alt="" class="co">
+            <div class="abc">
+                <h4>Experiment #2</h4>
+                <button>Check this out</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./R.jpg" alt="" class="co">
+            <div class="abc">
+                <h4>Experiemnt #3</h4>
+                <button>Check this out</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Experiments</a></li>
+                    <li><a href="#">Ecolo</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <p class="footer-copy">&copy; 2025 Science. All rights reserved.</p>
+    </footer>
+</body>
+</html>
